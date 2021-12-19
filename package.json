@@ -1,0 +1,15 @@
+{
+  "name": "diffcheckerelectron",
+  "version": "0.0.1",
+  "description": "testing_electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+    
+  },
+  "author": "Quartinocci",
+  "license": "GPL",
+  "devDependencies": {
+    "electron": "^15.3.0"
+  }
+}

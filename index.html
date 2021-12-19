@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>diffchecktron</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet"  href="./style.css">
+</head>
+<body>
+  <div class="content">
+      <div class="container-fluid p-5 bg-dark text-white text-center ">
+          <h1>diffchecktron </h1>
+          <p>drag and drop files to check if they have different content</p> 
+          <h1 id="status">&#11015; drop the files &#11015;</h1>
+      </div>
+  
+      <div class="container mt-5 ">
+        <div class="row">
+          <div id="drop1" class="col-sm-6 text-center ">
+            <div class="box">
+              <!--- <h1 style="font-size:300%;">&#128196 </h1> --->
+            <p id="drop1_text" style="font-size:150%;">drop a file here</p>
+            </div>
+            <p id="checksum1_text"></p>
+          </div>
+          <div id="drop2" class="col-sm-6 text-center">
+            <div class="box">
+            <p id="drop2_text" style="font-size:150%;">drop a file here</p>
+            </div>
+            <p id="checksum2_text"></p>
+          </div>
+        </div>
+      </div>
+  </div>
+<footer>
+    <div class="container-fluid p-2 bg-dark text-white text-center footer">
+    <p>Developed by Quartinocci Ver 1.0.0</p>
+    </div>
+</footer>
+
+<script src="./renderer.js" defer> </script>
+
+    
+</body>
+</html>
