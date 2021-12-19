@@ -2,7 +2,7 @@
 ![license]( https://img.shields.io/badge/license-GPL-green)
 
 
-A checksum based difference checker made with electron
+A checksum based difference checker made with [Electron](https://www.electronjs.org/)
 
 ## Testing
 
