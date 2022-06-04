@@ -1,47 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>diffchecktron</title>
+  <title>Diffchecktron</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet"  href="./style.css">
 </head>
 <body>
-  <div class="content">
-      <div class="container-fluid p-5 bg-dark text-white text-center ">
-          <h1>diffchecktron </h1>
-          <p>drag and drop files to check if they have different content</p> 
-          <h1 id="status">&#11015; drop the files &#11015;</h1>
-      </div>
-  
-      <div class="container mt-5 ">
-        <div class="row">
-          <div id="drop1" class="col-sm-6 text-center ">
-            <div class="box">
-              <!--- <h1 style="font-size:300%;">&#128196 </h1> --->
-            <p id="drop1_text" style="font-size:150%;">drop a file here</p>
-            </div>
-            <p id="checksum1_text"></p>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Diffchecktron</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav me-auto ">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">File VS File</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">File VS String</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown"> MD5 Checksum</a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" onclick="change_name('dropdown','MD5')" href="#">MD5</a></li>
+                    <li><a class="dropdown-item" onclick="change_name('dropdown','SHA256')" href="#">SHA256</a></li>
+                    <li><a class="dropdown-item" onclick="change_name('dropdown','SHA1')" href="#">SHA1</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="content">
+    <div class="container-fluid p-5 bg-dark text-white text-center ">
+        <p>(Drag and drop files to check if they have different content)</p> 
+        <h1 id="status">&#11015; drop the files &#11015;</h1>
+    </div>
+
+    <div class="container mt-5 ">
+      <div class="row">
+        <div id="drop1" class="col-sm-6 text-center ">
+          <div class="box">
+            <!--- <h1 style="font-size:300%;">&#128196 </h1> --->
+          <p id="drop1_text" style="font-size:150%;">drop a file here</p>
           </div>
-          <div id="drop2" class="col-sm-6 text-center">
-            <div class="box">
-            <p id="drop2_text" style="font-size:150%;">drop a file here</p>
-            </div>
-            <p id="checksum2_text"></p>
+          <p id="checksum1_text"></p>
+        </div>
+        <div id="drop2" class="col-sm-6 text-center">
+          <div class="box">
+          <p id="drop2_text" style="font-size:150%;">drop a file here</p>
           </div>
+          <p id="checksum2_text"></p>
         </div>
       </div>
-  </div>
-<footer>
-    <div class="container-fluid p-2 bg-dark text-white text-center footer">
-    <p>Developed by Quartinocci Ver 1.0.0</p>
     </div>
+</div>
+
+<footer>
+  <div class="container-fluid p-2 bg-dark text-white text-center footer">
+  <p>Developed by Quartinocci Ver 1.1.0</p>
+  </div>
 </footer>
 
 <script src="./renderer.js" defer> </script>
 
-    
+<script>
+    function change_name(id,to) 
+    {
+      const temp_element = document.getElementById(id);
+      temp_element.innerHTML = to + " Checksum" + '<span class="caret"></span>';
+    }
+</script>
+
 </body>
 </html>
+
+
